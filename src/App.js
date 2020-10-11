@@ -1,9 +1,20 @@
 import React, { useEffect } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { createUseStyles } from 'react-jss';
+
+import Header from './components/Header';
 import treesServices from './services/trees';
 
+const useStyles = createUseStyles({
+  container: {
+    minWidth: '100vW',
+    minHeight: '100vH',
+    background: 'linear-gradient(110.1deg, rgb(34, 126, 34) 2.9%, rgb(168, 251, 60) 90.3%)',
+  },
+});
+
 function App() {
+  const styles = useStyles();
+
   useEffect(() => {
     (async ()=> {
       const { data, error } = await treesServices.getTrees();
@@ -12,21 +23,9 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.container}>
+      <Header />
+
     </div>
   );
 }
