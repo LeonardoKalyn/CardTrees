@@ -73,24 +73,26 @@ function Card({
   const styles = useStyles({ showImage });
 
   return (
-    <div className={styles.card}>
-      <h2 className={styles.title}>
+    <div className={styles.card} data-testid="card">
+      <h2 className={styles.title} data-testid="card-title">
         {title}
       </h2>
-      <p className={styles.text}>
+      <p className={styles.text} data-testid="card-text">
         {text}
       </p>
-      <div className={styles.imageContainer}>
+      <div className={styles.imageContainer} data-testid="card-image-container">
         <img
           src={image}
           className={styles.image}
           alt={title}
+          data-testid="card-image"
         />
       </div>
       <button
         className={styles.button}
         onClick={() => setShowImage(!showImage)}
-        type="button"
+        role="button"
+        data-testid="card-button"
       >
         {showImage ? 'Hide Image' : 'Show Image'}
       </button>
