@@ -42,6 +42,24 @@ const useStyles = createUseStyles({
       },
     ],
   }),
+  button: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    border: 'none',
+    outline: 'none',
+    padding: '8px',
+    color: '#ffffff',
+    width: '130px',
+    backgroundColor: 'rgba(34, 126, 34, 0.7)',
+    borderRadius: '4px',
+
+    '&:hover': {
+      cursor: 'pointer',
+      backgroundColor: 'rgb(34, 126, 34)',
+    },
+  },
 });
 
 function Card({
