@@ -6,7 +6,7 @@ async function getTrees() {
       url: '/ecosia-frontend-developer/trees.json',
       method: 'GET',
     });
-    return { data };
+    return { data: data.trees };
   }
   catch(error) {
     console.log(error);

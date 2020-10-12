@@ -8,12 +8,12 @@ const useStyles = createUseStyles({
     justifyContent: 'center',
     alignItems: 'center',
     width: '100vw',
-    height: 100,
+    height: '100px',
     background: 'rgba(0,0,0,0.3)',
   },
-  logo: {
-    fontSize: 20,
-    lineHeight: 22,
+  title: {
+    fontSize: '30px',
+    lineHeight: '32px',
     color: '#ffffff',
   },
 });
@@ -23,7 +23,7 @@ function Header() {
 
   return (
     <header className={styles.header}>
-      <h1 className={styles.logo}>
+      <h1 className={styles.title}>
         Tree Cards
       </h1>
     </header>
