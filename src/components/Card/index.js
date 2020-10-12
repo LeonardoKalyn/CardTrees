@@ -14,6 +14,7 @@ const useStyles = createUseStyles({
     padding: '12px',
   },
   title: {
+    fontFamily: 'Mali',
     fontSize: '20px',
     lineHeight: '22px',
     marginBottom: '6px',

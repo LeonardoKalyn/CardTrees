@@ -8,12 +8,13 @@ const useStyles = createUseStyles({
     justifyContent: 'center',
     alignItems: 'center',
     width: '100vw',
-    height: '100px',
+    height: '80px',
     background: 'rgba(0,0,0,0.3)',
   },
   title: {
-    fontSize: '30px',
-    lineHeight: '32px',
+    fontFamily: 'Mali',
+    fontSize: '40px',
+    lineHeight: '42px',
     color: '#ffffff',
   },
 });
