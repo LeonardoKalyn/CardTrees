@@ -28,11 +28,19 @@ const useStyles = createUseStyles({
     height: 'auto',
     objectFit: 'cover',
     borderRadius: '5px',
+    border: '1px solid #cccccc',
   },
   imageContainer: ({ showImage }) => ({
-    maxHeight: showImage ? 'unset' : '0',
+    maxHeight: showImage ? '450px' : '0',
     overflow: 'hidden',
     marginBottom: '12px',
+    transition: [
+      {
+        property: 'max-height',
+        duration: '0.5s',
+        timingFunction: 'ease-in',
+      },
+    ],
   }),
 });
 
