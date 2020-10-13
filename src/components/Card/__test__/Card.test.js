@@ -39,15 +39,7 @@ describe('<Card />', () => {
     );
   
     const imageContaner = getByTestId('card-image-container');
-    const button = getByTestId('card-button');
-  
-    expect(imageContaner).toHaveStyle('max-height: 0');
-
-    userEvent.click(button);
-    expect(imageContaner).not.toHaveStyle('max-height: 0');
-
-    userEvent.click(button);
-    expect(imageContaner).toHaveStyle('max-height: 0');
+    expect(imageContaner).not.toBeVisible();
   });
 
   test('shows the image when the button is clicked, and hides it when button is clicked again', () => {
@@ -63,10 +55,10 @@ describe('<Card />', () => {
     const button = getByTestId('card-button');
 
     userEvent.click(button);
-    expect(imageContaner).not.toHaveStyle('max-height: 0');
+    expect(imageContaner).toBeVisible();
 
     userEvent.click(button);
-    expect(imageContaner).toHaveStyle('max-height: 0');
+    expect(imageContaner).not.toBeVisible();
   });
 
   test('changes the button text when the it is clicked', () => {

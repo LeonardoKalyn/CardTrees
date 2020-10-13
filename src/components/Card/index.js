@@ -34,13 +34,18 @@ const useStyles = createUseStyles({
   },
   imageContainer: ({ showImage }) => ({
     maxHeight: showImage ? '450px' : '0',
+    visibility: showImage ? 'visible' : 'hidden',
     overflow: 'hidden',
     marginBottom: '12px',
     transition: [
       {
         property: 'max-height',
         duration: '0.5s',
-        timingFunction: 'ease-in',
+        timingFunction: 'ease',
+      },
+      {
+        property: 'visibility',
+        delay: showImage ? '0s' : '0.6s',
       },
     ],
   }),
