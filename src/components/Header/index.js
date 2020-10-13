@@ -23,8 +23,8 @@ function Header() {
   const styles = useStyles();
 
   return (
-    <header className={styles.header}>
-      <h1 className={styles.title}>
+    <header className={styles.header} data-testid="header">
+      <h1 className={styles.title} data-testid="header-text">
         Tree Cards
       </h1>
     </header>
