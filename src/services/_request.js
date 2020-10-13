@@ -7,15 +7,19 @@ function handleError(error){
   throw error.message;
 };
 
-function request ({url, method, data, headers = {}}, _request = axios.request) {
+export const defaultHeaders = {
+  'Content-Type': 'application/json',
+};
+
+function request ({url, method, headers = {}, ...requestProps}, _request = axios.request) {
   return _request({
     url,
     method,
-    data,
     headers: {
-      'Content-Type': 'application/json',
+      ...defaultHeaders,
       ...headers,
     },
+    ...requestProps,
   })
     .then(response => response.data || response)
     .catch(error => handleError(error))

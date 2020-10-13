@@ -3,7 +3,7 @@ import nock from 'nock';
 import treesService from '../trees'
 
 describe('services/trees.getTrees()', () => {
-  test('return an object with data as a list of trees, on a successfull request', async () => {
+  test('returns an object with data as a list of trees, on a successfull request', async () => {
     const trees = [{
       "name": "Japanese red pine",
       "species_name": "Pinus densiflora",
@@ -20,7 +20,7 @@ describe('services/trees.getTrees()', () => {
     expect(error).toBeUndefined();
   });
 
-  test('return an object with error as a string, on a unsuccessfull request', async () => {
+  test('returns an object with error as a string, on an unsuccessfull request', async () => {
     const errorMessage = 'Could not get the trees.'
 
     nock(/.*?/)
