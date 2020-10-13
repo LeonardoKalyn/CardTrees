@@ -5,13 +5,13 @@ This is the front-end implementation of a coding challenge.
 ## Install and run
 To run this code locally, first clone this repo using:
 ```bash
-git clone https://github.com/LeonardoKalyn/CardTrees.git
+git clone git@github.com:LeonardoKalyn/TreeCards.git
 ```
 
 Then enter the repo folder and install the dependencies:
 And to run the project :
 ```bash
-cd tree-cards
+cd TreeCards
 yarn install
 ```
 
