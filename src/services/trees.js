@@ -9,7 +9,6 @@ async function getTrees() {
     return { data: data.trees };
   }
   catch(error) {
-    console.log(error);
     return { error };
   }
 }

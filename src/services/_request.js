@@ -2,7 +2,7 @@ import axios from 'axios';
 
 function handleError(error){
   if(error.response) {
-    throw error.response;
+    throw error.response.data;
   }
   throw error.message;
 };
