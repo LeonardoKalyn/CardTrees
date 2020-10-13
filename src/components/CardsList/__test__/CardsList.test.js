@@ -5,7 +5,7 @@ import CardsList from '../CardsList';
 const treesList = [{
   "name": "Japanese red pine",
   "species_name": "Pinus densiflora",
-  "image": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Pinus_syluestriformis_%28Takenouchi%29T.Wang_ex_Cheng.JPG"
+  "image": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Pinus_syluestriformis_%28Takenouchi%29T.Wang_ex_Cheng.JPG",
 }];
 const errorText = 'An error message!';
 

@@ -18,7 +18,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test-no-watch": "test --watchAll=false",
+    "eject": "react-scripts eject",
+    "lint": "eslint ./src --no-ignore --max-warnings 0"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -36,6 +38,13 @@
     ]
   },
   "devDependencies": {
+    "husky": "^4.3.0",
     "nock": "^13.0.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn run lint && yarn run test-no-watch",
+      "pre-push": "yarn run lint && yarn run test-no-watch"
+    }
   }
 }
