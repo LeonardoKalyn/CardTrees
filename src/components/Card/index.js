@@ -13,6 +13,16 @@ const useStyles = createUseStyles({
     borderRadius: '5px',
     margin: '12px',
     padding: '12px',
+    boxShadow: '0 4px 8px 0 rgba(0,0,0,0.2)',
+    transition: [{
+      property: 'box-shadow',
+      duration: '0.3s',
+      timingFunction: 'ease',
+    }],
+
+    '&:hover': {
+      boxShadow: '0 8px 16px 0 rgba(0,0,0,0.2)',
+    },
   },
   title: {
     fontFamily: 'Mali',
@@ -97,7 +107,7 @@ function Card({
       <button
         className={styles.button}
         onClick={() => setShowImage(!showImage)}
-        role="button"
+        type="button"
         data-testid="card-button"
       >
         {showImage ? 'Hide Image' : 'Show Image'}
