@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { createUseStyles } from 'react-jss';
+import PropTypes from 'prop-types';
 
 const useStyles = createUseStyles({
   card: {
@@ -98,6 +99,12 @@ function Card({
       </button>
     </div>
   )
+};
+
+Card.propTypes = {
+  title: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
 };
 
 export default Card;

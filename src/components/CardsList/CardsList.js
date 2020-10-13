@@ -1,5 +1,6 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
+import PropTypes from 'prop-types';
 
 import Card from '../Card';
 
@@ -45,7 +46,7 @@ const useStyles = createUseStyles({
 });
 
 function CardsList({
-  data,
+  data=[],
   error,
 }) {
   const styles = useStyles();
@@ -82,5 +83,10 @@ function CardsList({
     </div>
   );
 }
+
+CardsList.propTypes = {
+  data: PropTypes.array,
+  error: PropTypes.string,
+};
 
 export default CardsList;
