@@ -30,7 +30,7 @@ describe('<Card />', () => {
   });
   
   test('renders with the image initialy not showing', () => {
-    const { getByText, getByTestId } = render(
+    const { getByTestId } = render(
       <Card
         title={tree.name}
         text={tree.species_name}

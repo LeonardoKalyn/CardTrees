@@ -25,6 +25,23 @@ const useStyles = createUseStyles({
     height: '40px',
     backgroundColor: 'rgba(204, 2, 49, 0.7)',
   },
+  emptyList: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#ffffff',
+    width: '340px',
+    borderRadius: '5px',
+    margin: '12px',
+    padding: '12px',
+  },
+  emptyListText: {
+    fontFamily: 'Mali',
+    fontSize: '20px',
+    lineHeight: '22px',
+    color: '#227e22',
+  },
 });
 
 function CardsList({
@@ -36,23 +53,31 @@ function CardsList({
   return (
     <div>
       {!!error &&
-        <div className={styles.errorContainer}>
-          <p className={styles.error}>
+        <div className={styles.errorContainer} data-testid="error-container">
+          <p className={styles.error} data-testid="error">
             {error}
           </p>
         </div>
       }
 
-      <ul className={styles.list}>
-        {data.map((tree, index) => (
-          <l1 key={index}>
-            <Card
-              title={tree.name}
-              text={tree.species_name}
-              image={tree.image}
-            />
-          </l1>
-        ))}
+      <ul className={styles.list} data-testid="cards-list">
+        { data?.length
+          ? data.map((tree, index) => (
+            <li key={index} data-testid="cards-list-item">
+              <Card
+                title={tree.name}
+                text={tree.species_name}
+                image={tree.image}
+              />
+            </li>
+          )) : (
+            <div className={styles.emptyList} data-testid="empty-list">
+              <p className={styles.emptyListText} data-testid="empty-list-message">
+                There are no trees to show =(
+              </p>
+            </div>
+          )
+        }
       </ul>
     </div>
   );
